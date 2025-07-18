@@ -65,7 +65,7 @@ const LeadFormModal = ({ isOpen, onClose }) => {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:5000/send-email", {
+      await axios.post("https://bmtech-india-landing.onrender.com/send-email", {
         name,
         email,
         number, // Changed from phone to number to match sendMail
