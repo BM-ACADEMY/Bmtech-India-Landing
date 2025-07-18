@@ -106,11 +106,6 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#achievements" className="hover:underline transition">
-                  Achievements
-                </a>
-              </li>
-              <li>
                 <a
                   style={{cursor:'pointer'}}
                   onClick={() => setIsModalOpen(true)}

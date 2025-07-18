@@ -11,7 +11,7 @@ const HeroSection = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <section className="relative flex flex-col min-h-[100vh] bg-gradient-to-br from-black via-slate-900 to-black text-white text-sm pb-16">
+    <section id="home" className="relative flex flex-col min-h-[100vh] bg-gradient-to-br from-black via-slate-900 to-black text-white text-sm pb-16">
       <nav className="flex items-center justify-between p-4 border-b border-white/25 md:px-16 lg:px-24 xl:px-32 w-full">
         <a href="#" className="flex items-center gap-2">
           <img
