@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import whatsappIcon from "../assets/image/whatsapp.png";
+import whatsappIcon from "../assets/Image/whatsapp.png";
 
 const WhatsappFloatButton = () => {
   const phoneNumber = "9944288271";
