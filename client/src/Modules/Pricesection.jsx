@@ -19,7 +19,7 @@ const PricingSlider = () => {
   };
 
   const handleWhatsAppClick = (planName) => {
-    const phoneNumber = "9944288271";
+    const phoneNumber = "9944940051";
     const message = `Hi, I'm interested in the "${planName}" package. Please share more details.`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -27,54 +27,64 @@ const PricingSlider = () => {
   };
 
   const packages = [
-      {
-        title: "Static One-Page Website",
-        subtitle: "₹2,999 + GST",
-        tag: "Build My Website",
-        features: [
-          "Clean, Responsive Design",
-          "WhatsApp Chat Button",
-          "Google Map & Contact Form",
-          "Hosting FREE for 1 Year",
-          "💼 Best for: Freelancers | Local Shops | Service Providers",
-        ],
-        cta: "Build My Website",
-        popular: false,
-      },
-      {
-        title: "E-Commerce Website",
-        subtitle: "₹13,999 + GST",
-        tag: "Online Store",
-        features: [
-          "Product Uploads (Upto 30)",
-          "Payment Gateway (Razorpay/Stripe)",
-          "Order Management Panel",
-          "WhatsApp + Email Alerts",
-          "🛍️ Launch Your Own Store in 5–7 Days – Sell 24x7, Anytime",
-        ],
-        cta: "Start My Online Store",
-        popular: true,
-      },
-      {
-        title: "365 Days • 365 Posts Plan",
-        subtitle: "₹11,999 / Year",
-        tag: "Daily Marketing",
-        features: [
-          "One Poster/Day – Fully Branded",
-          "Business Event Posts + Custom Calendar",
-          "Festival & Promo Posters Covered",
-          "Scheduling + Canva Access (optional)",
-          "🔥 Perfect for Businesses Who Want Daily Buzz Without Daily Work.",
-        ],
-        cta: "I Want Daily Marketing",
-        popular: false,
-      },
+    {
+      title: "Static One-Page Website",
+      price: "₹3,999",
+      originalPrice: "₹5,999", // Added original price
+      addition: "+ GST",
+      tag: "Build My Website",
+      features: [
+        "Clean, Responsive Design",
+        "WhatsApp Chat Button",
+        "Upto 7 Pages",
+        "Google Map & Contact Form",
+        "Hosting FREE for 1 Year",
+        "💼 Best for: Freelancers | Local Shops | Service Providers",
+      ],
+      cta: "Build My Website",
+      popular: false,
+    },
+    {
+      title: "E-Commerce Website",
+      price: "₹13,999",
+      originalPrice: "₹24,999", // Added original price
+      addition: "+ GST",
+      tag: "Online Store",
+      features: [
+        "Product Uploads (Upto 30)",
+        "Payment Gateway (Razorpay/Stripe)",
+        "Order Management Panel",
+        "1 Year Server/Domain Free",
+        "WhatsApp + Email Alerts",
+        "🛍️ Launch Your Own Store in 5–7 Days – Sell 24x7, Anytime",
+      ],
+      cta: "Start My Online Store",
+      popular: true,
+    },
+    {
+      title: "365 Days • 365 Posts Plan",
+      price: "₹14,999",
+      originalPrice: "₹24,999", // Added original price
+      addition: "/ Year",
+      tag: "Daily Marketing",
+      features: [
+        "One Poster/Day – Fully Branded",
+        "Business Event Posts + Custom Calendar",
+        "Festival & Promo Posters Covered",
+        "Scheduling + Canva Access (optional)",
+        "🔥 Perfect for Businesses Who Want Daily Buzz Without Daily Work.",
+      ],
+      cta: "I Want Daily Marketing",
+      popular: false,
+    },
     {
       title: "Social Media Marketing Plan",
-      subtitle: "₹7,999 / Year",
+      price: "₹7,999",
+      originalPrice: "₹12,999", // Added original price
+      addition: "/ Month",
       tag: "Boost Visibility",
       features: [
-        "12 Engaging Reels/Month",
+        "12 Engaging Content (Reel & Poster) per month",
         "Social Media Page Handling",
         "1 Free Meta Ads Campaign",
         "Story Highlights & Monthly Reports",
@@ -86,7 +96,10 @@ const PricingSlider = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-bl from-black via-slate-900 to-black min-h-screen" id="plan">
+    <div
+      className="bg-gradient-to-bl from-black via-slate-900 to-black min-h-screen"
+      id="plan"
+    >
       <div className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -95,10 +108,12 @@ const PricingSlider = () => {
           className="text-center mb-16"
         >
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
-            Our Most Popular Packages – <span className="text-[#facc15] not-italic">Made for Growth</span>
+            Our Most Popular Packages –{" "}
+            <span className="text-[#facc15] not-italic">Made for Growth</span>
           </h1>
           <p className="text-center text-gray-300 text-lg md:text-xl mt-4 max-w-2xl mx-auto">
-            Handpicked solutions for Social Media, Marketing, Websites, and Online Stores.
+            Handpicked solutions for Social Media, Marketing, Websites, and
+            Online Stores.
           </p>
         </motion.div>
 
@@ -124,7 +139,17 @@ const PricingSlider = () => {
   );
 };
 
-const Card = ({ title, subtitle, tag, features, cta, popular, onClick }) => (
+const Card = ({
+  title,
+  price,
+  originalPrice,
+  addition,
+  tag,
+  features,
+  cta,
+  popular,
+  onClick,
+}) => (
   <motion.div
     whileHover={{ y: -10, scale: 1.02 }}
     className={`relative rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 p-6 flex flex-col justify-between h-full shadow-xl ${
@@ -138,8 +163,18 @@ const Card = ({ title, subtitle, tag, features, cta, popular, onClick }) => (
     )}
 
     <div className="flex flex-col items-center border-b border-gray-700 pb-6">
-      <span className="mb-2 text-xl font-bold text-white text-center">{title}</span>
-      <span className="text-2xl font-bold text-yellow-400">{subtitle}</span>
+      <span className="mb-2 text-xl font-bold text-white text-center">
+        {title}
+      </span>
+      <div className="flex items-baseline gap-2">
+        {" "}
+        {/* Use flex to align prices */}
+        <span className="text-2xl font-bold text-yellow-400">{price}</span>
+        <span className="text-gray-400 text-base line-through">
+          {originalPrice}
+        </span>
+        <span className="text-2xl font-bold text-yellow-400">{addition}</span>
+      </div>
     </div>
 
     <div className="space-y-3 py-6">
